@@ -1,0 +1,96 @@
+//getting element of HTML file by it's id
+//document.getElementById('gettingElement').innerHTML='Hi there';
+
+//getting input on prompt
+//prompt('What is your age?');
+
+Manipulate DOM with javascript means changing HTML using javascript
+It's not mandatory to match the names of the variables in calling of function and creating of function 
+for e.g
+
+function greetings(yourName){
+var result = 'Hello' + ' ' + yourName; //String concatenation
+console.log(result);
+
+}
+var name= prompt('What is your name?');
+greetings(name);
+
+we can also use let instead of var but it doesn't work in some conditions
+this keyword refer to the object that is currently being executed.
+
+json = javascript object notation
+json is used for APIs to carry information
+
+//Array
+let students = [
+      {
+        "name" : "Samra",
+        "age" : 22,
+        "height" : 5.4
+      },
+      {
+        "name" : "Sadaf",
+        "age" : 24,
+        "height" : 5.7
+      }
+    ]
+	
+//Parsing string as an Array
+    let students = `[
+      {
+        "name" : "Samra",
+        "age" : 22,
+        "height" : 5.4
+      },
+      {
+        "name" : "Sadaf",
+        "age" : 24,
+        "height" : 5.7
+      }
+    ]`
+    console.log(JSON.parse(students));
+	
+// Age in days challenge
+Index.html file
+<body>
+  <div class="container-1">
+    <h2>Challenge 1: Your age in days is </h2>
+    <div class="flex-box-container-1">
+      <div>
+        <button class="btn btn-primary" onclick="ageInDays()">Click me </button>
+      </div>
+
+      <div>
+        <button class="btn btn-danger" onclick="reset()">Reset</button>
+      </div>
+    </div>
+    <div class="flex-box-container-1">
+      <div id="flex-box-result"></div>
+    </div>
+  </div>
+
+
+  </script>
+
+  <script src="static/js/script.js"></script>
+</body>
+
+// js file
+//Challenge:1 Yor age in days
+
+function ageInDays() {
+  let birthYear = prompt('What year were you born?');
+  let ageDays = (2022-birthYear)*365;
+  let h1 = document.createElement('h1');
+  let answer = document.createTextNode('Your are ' + ageDays + 'days old.');
+  h1.setAttribute('id', 'ageInDays');
+  h1.appendChild(answer);
+  document.getElementById('flex-box-result').appendChild(h1);
+}
+
+function reset() {
+  document.getElementById('ageInDays').remove();
+}
+
+object data scructure doesnot keep the order track, array keeps the order track
